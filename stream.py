@@ -12,12 +12,15 @@ elapsed_time = 0
 z_count = 0
 x_count = 0
 
+zKey = input("insert keybind of preference\n")
+xKey = input("insert keybind of preference\n")
+
 while elapsed_time < 60:
     if msvcrt.kbhit():
         key = msvcrt.getch().decode('utf-8')
-        if key == "z":
+        if key == zKey:
             z_count += 1
-        elif key == "x":
+        elif key == xKey:
             x_count += 1
     elapsed_time = time.time() - start_time
 
