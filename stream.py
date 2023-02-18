@@ -14,6 +14,7 @@ x_count = 0
 
 zKey = input("insert keybind of preference\n")
 xKey = input("insert keybind of preference\n")
+clickLimit = int(input("insert the amount of clicks"))
 
 while elapsed_time < 60:
     if msvcrt.kbhit():
@@ -22,9 +23,14 @@ while elapsed_time < 60:
             z_count += 1
         elif key == xKey:
             x_count += 1
+
+        clicks = z_count + x_count
+        if clicks == clickLimit:
+            break
+        
     elapsed_time = time.time() - start_time
 
 print("z was pressed", z_count, "times")
 print("x was pressed", x_count, "times")
 
-bpmCalc(z_count, x_count)
+#bpmCalc(z_count, x_count)
